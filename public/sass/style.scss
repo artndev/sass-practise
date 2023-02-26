@@ -1,0 +1,33 @@
+@import "./vars", "./mixins", "./samples";
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+body {
+    background-color: $main-color;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container__wrapper {
+    @extend %container-base;
+    height: 100vh;
+    width: 100%;
+}
+
+.container {
+    @extend %container-base;
+    width: 50%;
+    height: 50vh;
+    background-color: $secondary-color;
+    border-radius: .5vh;
+    user-select: none;
+
+    .title {
+        font-size: 10vw - 2vw;
+        color: $main-color;
+        transition: transform .15s ease-in-out;
+
+        &:hover {
+            @include transform(scale(.9));
+        }
+    }
+}
